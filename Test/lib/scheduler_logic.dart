@@ -28,8 +28,6 @@ class TimetableScheduler {
 
 
   // --- Helper Methods ---
-  // _prompt is removed as input will come from UI elements
-
   int _generateIdFor(String type) {
     switch (type) {
       case 'student': return _nextStudentId++;
@@ -49,10 +47,7 @@ class TimetableScheduler {
     }
   }
 
-  // _displayList is removed as lists will be displayed by Flutter widgets
-
   // --- Add Methods ---
-  // We'll modify these to return a status or throw an error for UI feedback
   String addStudent(String name) {
     if (name.isEmpty) return "Student name cannot be empty.";
     var student = Student(_generateIdFor('student'), name);
@@ -92,9 +87,6 @@ class TimetableScheduler {
     return "Timeslot '$timeslotStr' added.";
   }
 
-  // addSubjectOfferingToSchedule needs significant changes for UI interaction.
-  // For now, let's simplify it or plan to build a complex dialog for it.
-  // This version assumes IDs are passed in.
   String addSubjectOffering(int courseId, int instructorId, List<int> studentIds) {
     Course? course = _findById(_courses, courseId);
     if (course == null) return "Invalid Course ID.";
@@ -151,7 +143,7 @@ class TimetableScheduler {
     return null;
   }
 
-  List<String> runScheduler() { // Returns a log of messages
+  List<String> runScheduler() { 
     List<String> logMessages = [];
     if (_subjectOfferingsToSchedule.isEmpty) {
       logMessages.add("No subject offerings in the queue to schedule. Please add some first.");
@@ -167,7 +159,6 @@ class TimetableScheduler {
     }
 
     logMessages.add("--- Running Scheduler ---");
-    // Create a mutable copy for the scheduling process to modify
     List<ScheduledClass> newSchedule = [];
 
     Set<int> processedOfferingIds = {};
@@ -190,7 +181,7 @@ class TimetableScheduler {
             currentOffering,
             classroom,
             timeslot,
-            newSchedule, // Pass the temporary schedule
+            newSchedule, 
           );
 
           if (conflictReason != null) {
@@ -204,7 +195,7 @@ class TimetableScheduler {
               classroom.name,
               timeslot,
             );
-            newSchedule.add(newScheduledClass); // Add to the temporary schedule
+            newSchedule.add(newScheduledClass); 
             scheduledThisOffering = true;
             processedOfferingIds.add(currentOffering.id);
             logMessages.add(

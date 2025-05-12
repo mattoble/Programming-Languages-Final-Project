@@ -55,7 +55,6 @@ class _SchedulerHomePageState extends State<SchedulerHomePage> with SingleTicker
     );
   }
 
-  // --- Dialogs for Adding Items ---
   Future<void> _showAddSimpleItemDialog(String title, String label, Function(String) onSave) async {
     final controller = TextEditingController();
     return showDialog<void>(
@@ -149,7 +148,7 @@ class _SchedulerHomePageState extends State<SchedulerHomePage> with SingleTicker
       return;
     }
 
-    // Using StatefulBuilder to manage dialog's own state for selections
+ 
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -192,7 +191,7 @@ class _SchedulerHomePageState extends State<SchedulerHomePage> with SingleTicker
                       isExpanded: true,
                     ),
                     const SizedBox(height: 10),
-                    const Text("Select Students (Optional):"),
+                    const Text("Select Students:"),
                     if (_scheduler.students.isEmpty) const Text("No students available to enroll."),
                     ..._scheduler.students.map((student) {
                       return CheckboxListTile(
@@ -257,15 +256,15 @@ class _SchedulerHomePageState extends State<SchedulerHomePage> with SingleTicker
   Widget _buildListView<T>(List<T> items, String title, String Function(T) itemTitle, {String emptyMessage = "No items yet."}) {
   if (items.isEmpty) {
     return Center(
-      child: Padding( // Optional: Add some padding to the empty message
+      child: Padding( 
         padding: const EdgeInsets.symmetric(vertical: 16.0),
         child: Text(emptyMessage, style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
       )
     );
   }
   return ListView.builder(
-    shrinkWrap: true,                 // <<< ADD THIS LINE
-    physics: const NeverScrollableScrollPhysics(), // <<< ADD THIS LINE
+    shrinkWrap: true,                
+    physics: const NeverScrollableScrollPhysics(), 
     itemCount: items.length,
     itemBuilder: (context, index) {
       final item = items[index];
@@ -273,8 +272,6 @@ class _SchedulerHomePageState extends State<SchedulerHomePage> with SingleTicker
         margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: ListTile(
           title: Text(itemTitle(item)),
-          // You could add more details to the ListTile if needed:
-          // subtitle: item is Student ? Text("ID: ${(item as Student).id}") : null,
         ),
       );
     },
