@@ -9,8 +9,8 @@ class SchedulerProvider with ChangeNotifier {
   final List<Classroom> _classrooms = [];
   final List<String> _timeslots = [];
   final List<SubjectOffering> _subjectOfferingsToSchedule = [];
-  List<ScheduledClass> _finalSchedule = [];
-  List<String> _unscheduledMessages = [];
+  final List<ScheduledClass> _finalSchedule = [];
+  final List<String> _unscheduledMessages = [];
 
   // Getters for UI to access data
   List<Student> get students => List.unmodifiable(_students);

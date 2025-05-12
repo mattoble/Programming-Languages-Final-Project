@@ -5,6 +5,8 @@ import '../providers/scheduler_provider.dart';
 import '../models/timetable_entities.dart'; // Assuming your models are here
 
 class MainSchedulerScreen extends StatefulWidget {
+  const MainSchedulerScreen({super.key});
+
   @override
   _MainSchedulerScreenState createState() => _MainSchedulerScreenState();
 }
@@ -245,8 +247,9 @@ class _MainSchedulerScreenState extends State<MainSchedulerScreen> {
                       validator: (v) {
                         if (v == null || v.trim().isEmpty) return 'Required';
                         if (int.tryParse(v.trim()) == null ||
-                            int.parse(v.trim()) <= 0)
+                            int.parse(v.trim()) <= 0) {
                           return 'Invalid';
+                        }
                         return null;
                       },
                     ),
