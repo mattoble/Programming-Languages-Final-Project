@@ -1,0 +1,22 @@
+{
+    "sourceFile": "timetable_app/lib/main.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1747025177646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747025440969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,23 +18,24 @@\n         theme: ThemeData(\r\n           primarySwatch: Colors.deepPurple, // Changed theme color for variety\r\n           visualDensity: VisualDensity.adaptivePlatformDensity,\r\n           useMaterial3: true, // Recommended for new Flutter projects\r\n-          inputDecorationTheme: InputDecorationTheme( // Consistent border for input fields\r\n+          inputDecorationTheme: InputDecorationTheme(\r\n+            // Consistent border for input fields\r\n             border: OutlineInputBorder(\r\n               borderRadius: BorderRadius.circular(8.0),\r\n             ),\r\n           ),\r\n           elevatedButtonTheme: ElevatedButtonThemeData(\r\n             style: ElevatedButton.styleFrom(\r\n               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),\r\n               shape: RoundedRectangleBorder(\r\n-                borderRadius: BorderRadius.circular(8.0)\r\n-              )\r\n-            )\r\n-          )\r\n+                borderRadius: BorderRadius.circular(8.0),\r\n+              ),\r\n+            ),\r\n+          ),\r\n\\ No newline at end of file\n         ),\r\n         home: MainSchedulerScreen(), // Changed home screen\r\n       ),\r\n     );\r\n   }\r\n-}\n+}\r\n"
+                }
+            ],
+            "date": 1747025177646,
+            "name": "Commit-0",
+            "content": "// lib/main.dart\r\nimport 'package:flutter/material.dart';\r\nimport 'package:provider/provider.dart';\r\nimport 'providers/scheduler_provider.dart';\r\nimport 'screens/main_scheduler_screen.dart'; // Changed import\r\n\r\nvoid main() {\r\n  runApp(MyApp());\r\n}\r\n\r\nclass MyApp extends StatelessWidget {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return ChangeNotifierProvider(\r\n      create: (context) => SchedulerProvider(),\r\n      child: MaterialApp(\r\n        title: 'Timetable Scheduler',\r\n        theme: ThemeData(\r\n          primarySwatch: Colors.deepPurple, // Changed theme color for variety\r\n          visualDensity: VisualDensity.adaptivePlatformDensity,\r\n          useMaterial3: true, // Recommended for new Flutter projects\r\n          inputDecorationTheme: InputDecorationTheme( // Consistent border for input fields\r\n            border: OutlineInputBorder(\r\n              borderRadius: BorderRadius.circular(8.0),\r\n            ),\r\n          ),\r\n          elevatedButtonTheme: ElevatedButtonThemeData(\r\n            style: ElevatedButton.styleFrom(\r\n              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),\r\n              shape: RoundedRectangleBorder(\r\n                borderRadius: BorderRadius.circular(8.0)\r\n              )\r\n            )\r\n          )\r\n        ),\r\n        home: MainSchedulerScreen(), // Changed home screen\r\n      ),\r\n    );\r\n  }\r\n}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "timetable_app/lib/models/timetable_entities.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1747025036446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1747025036446,
+            "name": "Commit-0",
+            "content": "// lib/models/timetable_entities.dart\r\nclass Student {\r\n  int id;\r\n  String name;\r\n  Student(this.id, this.name);\r\n}\r\n\r\nclass Instructor {\r\n  int id;\r\n  String name;\r\n  Instructor(this.id, this.name);\r\n}\r\n\r\nclass Course {\r\n  int id;\r\n  String name;\r\n  Course(this.id, this.name);\r\n}\r\n\r\nclass Classroom {\r\n  int id;\r\n  String name;\r\n  int capacity;\r\n  Classroom(this.id, this.name, this.capacity);\r\n}\r\n\r\nclass SubjectOffering {\r\n  int id;\r\n  Course course;\r\n  Instructor instructor;\r\n  List<Student> studentsEnrolled;\r\n\r\n  SubjectOffering(this.id, this.course, this.instructor, this.studentsEnrolled);\r\n\r\n  String get studentsSummary {\r\n    if (studentsEnrolled.isEmpty) return \"No students\";\r\n    return studentsEnrolled.map((s) => s.name).join(', ');\r\n  }\r\n}\r\n\r\nclass ScheduledClass {\r\n  int offeringId;\r\n  String courseName;\r\n  String instructorName;\r\n  List<String> studentNames;\r\n  String classroomName;\r\n  String timeslot;\r\n\r\n  ScheduledClass(this.offeringId, this.courseName, this.instructorName,\r\n      this.studentNames, this.classroomName, this.timeslot);\r\n}"
+        }
+    ]
+}

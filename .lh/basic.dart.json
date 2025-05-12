@@ -1,0 +1,18 @@
+{
+    "sourceFile": "basic.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1747022441944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1747022441944,
+            "name": "Commit-0",
+            "content": "import 'dart:io';\r\n\r\nvoid main() {\r\n  // Ask the user for their name\r\n  stdout.write('Enter your name: ');\r\n  \r\n  // Read the user input\r\n  String? name = stdin.readLineSync();\r\n  \r\n  // Display the input back to the user\r\n  print('Hello, $name!');\r\n}\r\n"
+        }
+    ]
+}
